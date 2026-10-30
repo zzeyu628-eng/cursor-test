@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#faf8ef" />
+  <meta name="description" content="A small, mobile-friendly 2048 game. Swipe to play." />
+  <title>2048</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <div class="side">
+      <header class="topbar">
+        <div class="brand">
+          <h1 class="title">2048</h1>
+          <p class="tagline">Join the tiles to reach 2048.</p>
+        </div>
+        <div class="scores">
+          <div class="score-box">
+            <span class="score-label">Score</span>
+            <span class="score-value" id="score">0</span>
+          </div>
+          <div class="score-box">
+            <span class="score-label">Best</span>
+            <span class="score-value" id="best">0</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="toolbar">
+        <p class="hint">Swipe the board to play</p>
+        <button type="button" class="button" id="new-game">New Game</button>
+      </div>
+    </div>
+
+    <div class="board" id="board" role="application" aria-label="2048 board">
+      <div class="cells" id="cells" aria-hidden="true"></div>
+      <div class="tiles" id="tiles" aria-hidden="true"></div>
+      <div class="overlay" id="overlay" hidden>
+        <div class="overlay-card">
+          <h2 class="overlay-title" id="overlay-title">Game over</h2>
+          <p class="overlay-text" id="overlay-text"></p>
+          <div class="overlay-actions">
+            <button type="button" class="button" id="keep-playing" hidden>Keep playing</button>
+            <button type="button" class="button button-quiet" id="overlay-restart">New Game</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="instructions">
+      Swipe up, down, left, or right on the board. On a keyboard, use the arrow keys (or W A S D).
+    </p>
+    <p class="sr-only" id="status" role="status" aria-live="polite"></p>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
